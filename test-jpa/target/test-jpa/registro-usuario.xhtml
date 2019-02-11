@@ -1,0 +1,86 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Registro Usuario</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+			 <h:form>
+        	
+
+                        
+                   <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Cedula:</h:outputLabel>
+                            <h:inputText type="text" id="txtcedula" value="#{personaBean.newPersona.cedula}"/>
+                            <h:message for="txtcedula"/>
+                          </div>
+     
+                        
+                          
+                          <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Nombre:</h:outputLabel>
+                            <h:inputText type="text" id="txtnombre" value="#{personaBean.newPersona.nombre}"/>
+                            <h:message for="txtnombre"/>
+                          </div>
+     
+                        
+                         
+                          
+                          <div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Fecha:</h:outputLabel>
+                            <h:inputText type="text" id="txtfecha" value="#{personaBean.newPersona.fecha}">
+                            <f:convertDateTime patern = "d-M-yy"/>
+                           
+								</h:inputText>
+								<h:message for="txtfecha"/>
+                          </div>
+                        
+                        
+                         
+                          
+                          <div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Email:</h:outputLabel>
+                            <h:inputText type="email" id="txtemail"  value="#{personaBean.newPersona.email}"/>
+                            <h:message for="txtemail"/>
+                          </div>
+                       
+                        
+                 
+                          
+                          <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Contraseña:</h:outputLabel>
+                            <h:inputText type="password" id="txtcontrasenia" value="#{personaBean.newPersona.contrasenia}"/>
+                            <h:message for="txtcontrasenia"/>
+                          </div>
+                     
+                        
+ 
+                          
+                          <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Dirección:</h:outputLabel>
+                            <h:inputText type="text" id="txtdireccion" value="#{personaBean.newPersona.direccion}"/>
+                            <h:message for="txtdireccion"/>
+                          </div>
+                    
+                        
+                          
+                          <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Teléfono:</h:outputLabel>
+                            <h:inputText type="text" id="txttelefono" value="#{personaBean.newPersona.telefono}"/>
+                            <h:message for="txttelefono"/>
+                          </div>
+                             
+                        
+                <div class="form-group">
+                  	<h:inputHidden value="#{personaBean.editing}" /> 
+					<h:commandButton action="#{personaBean.guardar()}" value="Guardar" />
+                </div>
+            
+              </h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>

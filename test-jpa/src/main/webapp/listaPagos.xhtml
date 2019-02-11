@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Lista de Pagos</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+				<h:form>
+
+		<h:dataTable var="_pago" value="#{pagoBean.pagos}"
+			rendered="#{not empty pagoBean.pagos}"
+			styleClass="simpletablestyle">
+			<!-- rendered sirve para que en la tabla muestre solo cuando existen datos completos en la lista personas sin eso 
+					
+																						lista todo asi haya o no datos -->
+		
+		<h:column>
+				<f:facet name="header">Cedula</f:facet>
+                #{_pago.cliente.cedula}
+            </h:column>
+            
+            	<h:column>
+				<f:facet name="header">Cliente</f:facet>
+                #{_pago.cliente.nombre}
+            </h:column>
+            
+			<h:column>
+				<f:facet name="header">Fecha</f:facet>
+                #{_pago.fecha}
+            </h:column>
+			<h:column>
+				<f:facet name="header">CostoTotal</f:facet>
+                #{_pago.costoTotal}
+            </h:column>
+            
+            <h:column>
+				<f:facet name="header">FormaPago</f:facet>
+                #{_pago.formaPago}
+            </h:column>
+            
+
+			<h:column>
+				<f:facet name="header">Acciones</f:facet>
+               
+                 <h:commandButton action="#{pagoBean.editar(_pago)}" value="Editar" />
+            </h:column>
+            
+            
+  			
+		</h:dataTable>
+			
+	</h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>
+	

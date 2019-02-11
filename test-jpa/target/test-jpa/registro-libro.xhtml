@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Registro Libro</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+			 <h:form>
+                        
+                   <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Código:</h:outputLabel>
+                            <h:inputText type="text" id="txtcodigo" value="#{libroBean.newLibro.id}"/>
+                            <h:message for="txtcodigo"/>
+                          </div>
+     
+                        
+                          <div class="form-group">
+                          <h:outputLabel  class="col-sm-3 col-form-label">Autor:</h:outputLabel>
+                            <h:inputText type="text" id="txtautor" value="#{libroBean.newLibro.autor}"/>
+                            <h:message for="txtautor"/>
+                          </div>
+    
+      						<div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Titulo:</h:outputLabel>
+                            <h:inputText type="text" id="txttitulo" value="#{libroBean.newLibro.titulo}"/>
+                           <h:message for="txttitulo"/>
+                            </div>
+                          
+                          <div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Descripción:</h:outputLabel>
+                            <h:inputText type="text" id="txtdescripcion" value="#{libroBean.newLibro.descripcion}"/>
+                           <h:message for="txtdescripcion"/>
+                            </div>
+                            
+                             <div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Categoria:</h:outputLabel>
+                            <h:inputText type="text" id="txtcategoria" value="#{librosBean.newLibro.categoria}"/>
+                           <h:message for="txtcategoria"/>
+                            </div>
+                            
+                               <div class="form-group">
+                          <h:outputLabel class="col-sm-3 col-form-label">Costo:</h:outputLabel>
+                            <h:inputText type="text" id="txtcosto" value="#{libroBean.newLibro.costo}"/>
+                           <h:message for="txtcosto"/>
+                            </div>
+                            
+                            
+                        
+                <div class="form-group">
+                  	<h:inputHidden value="#{libroBean.editing}" /> 
+					<h:commandButton action="#{libroBean.guardar()}" value="Guardar" />
+                </div>
+            
+              </h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>

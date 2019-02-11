@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Comentarios</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+				<h:form>
+
+		<h:dataTable var="_comentario" value="#{comentarioBean.comentarios}"
+			rendered="#{not empty comentarioBean.comentarios}"
+			styleClass="simpletablestyle">
+			<!-- rendered sirve para que en la tabla muestre solo cuando existen datos completos en la lista personas sin eso 
+																						lista todo asi haya o no datos -->
+			<h:column>
+				<f:facet name="header">Cliente</f:facet>
+                  #{_comentario.clienteCom.nombre}
+            </h:column>
+			
+			<h:column>
+				<f:facet name="header">.....</f:facet>
+
+            </h:column>
+			
+			<h:column>
+				<f:facet name="header">Comentario</f:facet>
+                #{_comentario.texto}
+            </h:column>
+            
+            
+		</h:dataTable>
+			
+	</h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>
+	

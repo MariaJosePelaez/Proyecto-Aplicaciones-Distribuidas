@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://richfaces.org/rich">
+<h:head>
+	<title>Sistema Libreria</title>
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Academica Learning Page Template"/>
+	<meta name="keywords" content="academica, unica, creative, html"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!-- Favicon -->   
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://resources/fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="resources/css/flaticon.css"/>
+	<link rel="stylesheet" href="resources/css/owl.carousel.css"/>
+	<link rel="stylesheet" href="resources/css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</h:head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+	
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="container">
+				<a href="#" class="site-logo">
+					<img src="resources/img/logo.png" alt=""/>
+				</a>
+				<div class="user-panel">
+				<h:form>
+		<h:commandLink action="#{loginBean.logout()}" value="Regresar" />
+	</h:form>
+					
+				</div>
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+				<ul class="main-menu">
+					<li><a href="registro-usuario.xhtml">Clientes</a></li>
+					<li><a href="listPersonas.xhtml">Lista Clientes</a></li>
+					<li><a href="registro-libro.xhtml">Libros</a></li>
+					<li><a href="listaLibro.xhtml">Lista Libros</a></li>
+					<li><a href="registro-pagos.xhtml">Pagos</a></li>
+					<li><a href="listaPagos.xhtml">Lista Pagos</a></li>
+					<li><a href="listaComentarios.xhtml">Comentarios</a></li>
+					<li><a href="contact.html">Reportes</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="resources/img/page-top-bg.jpg">
+		<div class="container text-white">
+			<h3 class="box-title"><ui:insert name="titulo">Titulo</ui:insert></h3>
+		</div>
+	</section>
+	
+	<section class="multi-search-section">
+	
+	</section>
+
+	<section class="about-section spad">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-lg-5">
+					<figure class="pt-lg-0 pt-5">
+						<img src="resources/img/about.jpg" alt=""/>
+					</figure>
+				</div>
+				<div class="col-lg-5">
+					
+					<ui:insert name="contenido">
+					
+					</ui:insert>
+					
+				</div>
+				
+			
+				
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
+
+
+	<!-- Progress section -->
+	<section class="Progress-section spad set-bg" data-setbg="resources/img/progress-bg.jpg">
+		
+	</section>
+	<!-- Progress section end -->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section spad pb-0">
+	
+	</footer>
+	<!-- Footer section end -->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="resources/js/jquery-3.2.1.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/owl.carousel.min.js"></script>
+	<script src="resources/js/circle-progress.min.js"></script>
+	<script src="resources/js/main.js"></script>
+
+
+</body>
+</html>

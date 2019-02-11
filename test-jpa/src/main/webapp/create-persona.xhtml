@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://richfaces.org/rich"> 
+
+<h:head></h:head> 
+<body> 
+
+<h:form>
+<h:panelGrid columns="3">
+
+<h:outputLabel value="Cedula" />
+<h:inputText value="#{personaBean.newPersona.cedula}" id="txtcedula"/>
+<h:message for="txtcedula"/>
+
+<h:outputLabel value="Nombre" />
+<h:inputText value="#{personaBean.newPersona.nombre}" id="txtnombre"/>
+<h:message for="txtnombre"/>
+
+<h:outputLabel value="Fecha Nacimiento" />
+<h:inputText value="#{personaBean.newPersona.fecha}" id="txtfecha">
+<f:convertDateTime pattern="d-M-yyyy" />
+</h:inputText>
+<h:message for="txtfecha"/>
+
+<h:outputLabel value="Email" />
+<h:inputText value="#{personaBean.newPersona.email}" id="txtemail"/>
+<h:message for="txtemail"/>
+
+<h:outputLabel value="Contraseña" />
+<h:inputSecret value="#{personaBean.newPersona.contrasenia}" id="txtcontrasenia" type="password"/>
+<h:message for="txtcontrasenia"/>
+
+<h:outputLabel value="Direccion" />
+<h:inputText value="#{personaBean.newPersona.direccion}" id="txtdireccion"/>
+<h:message for="txtdireccion"/>
+
+<h:inputHidden value="#{personaBean.editing}" /> 
+<h:commandButton action="#{personaBean.guardar()}" value="Guardar" />
+
+</h:panelGrid>
+ 
+<h:dataTable var="_telefono" value="#{personaBean.newPersona.telefonos}"
+		
+			styleClass="simpletablestyle">
+			<!-- rendered sirve para que en la tabla muestre solo cuando existen datos completos en la lista personas sin eso 
+																						lista todo asi haya o no datos -->
+			<h:column>
+				<f:facet name="header">Numero:</f:facet>
+                <h:inputText value="#{_telefono.numero}" id="txtnumero"/>
+                <h:message for="txtnumero"/>
+            </h:column>
+			<h:column>
+				<f:facet name="header">Tipo</f:facet>
+                <h:inputText value="#{_telefono.tipo}" id="txttipo" />
+                <h:message for="txttipo"/>
+            </h:column>
+		
+			<f:facet name="footer">
+			
+			<h:commandButton action="#{personaBean.addTelefono()}" value="Agregar telefono" />
+
+			</f:facet>
+		</h:dataTable>
+
+<h:messages globalOnly="true" />
+</h:form>
+</body> 
+</html>

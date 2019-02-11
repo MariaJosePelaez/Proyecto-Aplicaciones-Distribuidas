@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Inicio</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+			
+			<h:form>
+		<p>BIENVENIDO #{loginBean.usuario}</p>
+		
+		
+	</h:form>
+
+	  </div>
+	  
+	  	<figure class="pt-lg-0 pt-5">
+						<img src="resources/img/bienvenido.png" alt=""/>
+						
+					</figure>
+					
+					<figure class="pt-lg-0 pt-5">
+					
+						<img src="resources/img/biblioteca.jpg" alt=""/>
+					</figure>
+					
+	</ui:define>
+	
+	<ui:define name="logo">
+			 <div class="auto-form-wrapper">
+			
+			<figure class="pt-lg-0 pt-5">
+						<img src="resources/img/bienvenido.png" alt=""/>
+					</figure>
+	  </div>
+	</ui:define>
+	</ui:composition>

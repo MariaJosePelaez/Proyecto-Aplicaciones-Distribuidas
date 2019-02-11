@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Lista de  Usuarios</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+				<h:form>
+
+		<h:dataTable var="_persona" value="#{personaBean.personas}"
+			rendered="#{not empty personaBean.personas}"
+			styleClass="simpletablestyle">
+			<!-- rendered sirve para que en la tabla muestre solo cuando existen datos completos en la lista personas sin eso 
+																						lista todo asi haya o no datos -->
+			<h:column>
+				<f:facet name="header">Cédula</f:facet>
+                  #{_persona.cedula}
+            </h:column>
+			<h:column>
+				<f:facet name="header">Nombres</f:facet>
+                #{_persona.nombre}
+            </h:column>
+			<h:column>
+				<f:facet name="header">Email</f:facet>
+                #{_persona.email}
+            </h:column>
+            
+            <h:column>
+				<f:facet name="header">Fecha nacimiento</f:facet>
+                #{_persona.fecha}
+            </h:column>
+            
+            <h:column>
+				<f:facet name="header">Teléfono</f:facet>
+                #{_persona.telefono}
+            </h:column>
+            
+
+			<h:column>
+				<f:facet name="header">Acciones</f:facet>
+               
+                 <h:commandButton action="#{personaBean.editar(_persona)}" value="Editar" />
+            </h:column>
+
+		
+		</h:dataTable>
+		
+	</h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>
+	
+	
+	

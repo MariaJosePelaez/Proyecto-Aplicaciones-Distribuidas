@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	template="about.xhtml">
+	
+	<ui:define name="titulo">Lista de Libros</ui:define>
+	
+	<ui:define name="contenido">
+			 <div class="auto-form-wrapper">
+				<h:form>
+
+		<h:dataTable var="_libro" value="#{libroBean.libros}"
+			rendered="#{not empty libroBean.libros}"
+			styleClass="simpletablestyle">
+			<!-- rendered sirve para que en la tabla muestre solo cuando existen datos completos en la lista personas sin eso 
+																						lista todo asi haya o no datos -->
+			<h:column>
+				<f:facet name="header">Título</f:facet>
+                  #{_libro.titulo}
+            </h:column>
+			<h:column>
+				<f:facet name="header">Autor</f:facet>
+                #{_libro.autor}
+            </h:column>
+			<h:column>
+				<f:facet name="header">Descripcion</f:facet>
+                #{_libro.descripcion}
+            </h:column>
+            
+            <h:column>
+				<f:facet name="header">Categoria</f:facet>
+                #{_libro.categoria}
+            </h:column>
+            
+            <h:column>
+				<f:facet name="header">Costo</f:facet>
+                #{_libro.costo}
+            </h:column>
+            
+			<h:column>
+				<f:facet name="header">Acciones</f:facet>
+                
+                 <h:commandButton action="#{libroBean.editar(_libro)}" value="Editar" />
+            </h:column>
+
+		
+		</h:dataTable>
+		
+	</h:form>
+	  </div>
+	</ui:define>
+	</ui:composition>
+	

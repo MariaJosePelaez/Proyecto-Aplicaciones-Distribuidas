@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+
+	template="login.xhtml">
+	
+	
+	<ui:define name="titulo">Inicio Sesión</ui:define>
+	
+	<ui:define name="contenido">
+	
+	 <h:form action="#">
+                <div class="form-group">
+                  <h:outputLabel class="label">Usuario</h:outputLabel>
+                  <div class="input-group">
+                    <h:inputText type="text" value="#{loginBean.usuario}" id="txtusuario"/>
+                    <h:message for="txtusuario"/>
+                   
+                  </div>
+                </div>
+                <div class="form-group">
+                  <h:outputLabel class="label">Contraseña</h:outputLabel>
+                  <div class="input-group">
+                    <h:inputSecret type="text" value="#{loginBean.contrasenia}" id="txtcontrasenia"/>
+                    <h:message for="txtcontrasenia"/>
+                   
+                  </div>
+                </div>
+                <div class="form-group">
+                 <h:commandButton action="#{loginBean.validateUsernamePassword()}" value="Ingresar" />
+                </div>
+			
+			<h:messages globalOnly="true" />
+			</h:form>
+	
+	</ui:define>
+	</ui:composition>
